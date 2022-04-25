@@ -1,22 +1,14 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
-import CustomInput from '../components/CustomInput/CustomInput';
-import CustomButton from '../components/CustomButton';
+import CustomInput from '../../components/CustomInput/CustomInput';
+import CustomButton from '../../components/CustomButton';
+import SocialSignInButtons from '../SocialSignInButtons.js/SocialSignInButtons';
 
 const SignInScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const onSignInPressed = () => {
     console.warn('sign in');
-  };
-  const onSignInGoogle = () => {
-    console.warn('Google');
-  };
-  const onSignInFacebook = () => {
-    console.warn('Facebook');
-  };
-  const onSignInApple = () => {
-    console.warn('Apple');
   };
   const onForgotPasswordPressed = () => {
     console.warn('forgot password');
@@ -28,6 +20,7 @@ const SignInScreen = () => {
   return (
     <ScrollView>
       <View style={styles.root}>
+        <Text style={styles.text}>Sign in</Text>
         <CustomInput
           placeholder="Username"
           value={username}
@@ -40,23 +33,7 @@ const SignInScreen = () => {
           secureTextEntry
         />
         <CustomButton onPress={onSignInPressed} text="Sign in" />
-        <CustomButton
-          onPress={onSignInGoogle}
-          text="Sign in with Google"
-          bgColor="#0000FF"
-        />
-        <CustomButton
-          onPress={onSignInApple}
-          text="Sign in with Apple"
-          bgColor="#e3e3e3"
-          fgColor="#4765a9"
-        />
-        <CustomButton
-          onPress={onSignInFacebook}
-          text="Sign in with Facebook"
-          bgColor="#fae9ea"
-          fgColor="#dd4d44"
-        />
+        <SocialSignInButtons />
         <CustomButton
           onPress={onForgotPasswordPressed}
           text="Forgot Password?"
@@ -76,6 +53,11 @@ const styles = StyleSheet.create({
   root: {
     alignItems: 'center',
     paddingTop: 50,
+  },
+  text: {
+    color: 'white',
+    fontSize: 40,
+    paddingBottom: 10,
   },
 });
 
