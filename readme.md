@@ -19,7 +19,13 @@
 - Back to sign in button
 - Resend code button
 
-### Reset password screen
+### Forgot password screen
+
+- enter username input
+- send instructions via email
+- Back to sign in button
+
+### New password screen
 
 - Title
 - Username input
