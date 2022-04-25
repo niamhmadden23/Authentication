@@ -18,3 +18,10 @@
 - code input that is sent to email
 - Back to sign in button
 - Resend code button
+
+### Reset password screen
+
+- Title
+- Username input
+- Button to send code
+- Back to sign in button
