@@ -3,17 +3,25 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../SocialSignInButtons.js/SocialSignInButtons';
+import {useNavigation} from '@react-navigation/native';
 
 const SignInScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigation = useNavigation();
+
   const onSignInPressed = () => {
+    // validate user
+    navigation.navigate('Home');
     console.warn('sign in');
   };
   const onForgotPasswordPressed = () => {
+    navigation.navigate('ForgotPassword');
     console.warn('forgot password');
   };
   const noAccountPressed = () => {
+    navigation.navigate('SignUp');
     console.warn('no account');
   };
 

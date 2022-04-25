@@ -31,3 +31,7 @@
 - Username input
 - Button to send code
 - Back to sign in button
+
+## Navigation
+
+https://reactnavigation.org/docs/stack-navigator/

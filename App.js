@@ -13,14 +13,17 @@ import SignUpScreen from './src/screens/SignUpScreen/SignUpScreen';
 import ConfirmEmailScreen from './src/screens/ConfirmEmailScreen/ConfirmEmailScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import NewPasswordScreen from './src/screens/NewPasswordScreen/NewPasswordScreen';
+import HomeScreen from './src/screens/HomeScreen/HomeScreen';
+import Navigation from './src/navigation';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
       {/* <SignUpScreen /> */}
       {/* <ConfirmEmailScreen /> */}
-      <ForgotPasswordScreen />
+      {/* <ForgotPasswordScreen /> */}
       {/* <NewPasswordScreen /> */}
+      <Navigation />
     </SafeAreaView>
   );
 };
