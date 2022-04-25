@@ -13,8 +13,8 @@ const SignUpScreen = () => {
     console.warn('register');
   };
 
-  const noAccountPressed = () => {
-    console.warn('no account');
+  const onSignInPressed = () => {
+    console.warn('sign in pressed');
   };
 
   return (
@@ -45,8 +45,8 @@ const SignUpScreen = () => {
         </Text>
         <SocialSignInButtons />
         <CustomButton
-          onPress={noAccountPressed}
-          text="Don't have an account? Create one here"
+          onPress={onSignInPressed}
+          text="Have an account? Sign in"
           type="TERTIARY"
         />
       </View>
