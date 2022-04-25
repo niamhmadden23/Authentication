@@ -3,17 +3,22 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../SocialSignInButtons.js/SocialSignInButtons';
+import {useNavigation} from '@react-navigation/core';
+
 const SignUpScreen = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordRepeat, setPasswordRepeat] = useState('');
 
+  const navigation = useNavigation();
   const onRegisterPress = () => {
+    navigation.navigate('ConfirmEmail');
     console.warn('register');
   };
 
   const onSignInPressed = () => {
+    navigation.navigate('SignIn');
     console.warn('sign in pressed');
   };
 
