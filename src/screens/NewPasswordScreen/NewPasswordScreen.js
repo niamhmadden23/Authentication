@@ -2,15 +2,21 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton';
+import {useNavigation} from '@react-navigation/core';
+
 const NewPasswordScreen = () => {
   const [newPassword, setNewPassword] = useState('');
   const [code, setCode] = useState('');
 
+  const navigation = useNavigation();
+
   const onSubmitPressed = () => {
+    navigation.navigate('Home');
     console.warn('Submit');
   };
 
   const backToSignIn = () => {
+    navigation.navigate('SignIn');
     console.warn('back to sign in');
   };
 
