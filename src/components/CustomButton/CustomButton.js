@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   text: {
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   container_PRIMARY: {
