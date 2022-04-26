@@ -36,6 +36,10 @@
 
 https://reactnavigation.org/docs/stack-navigator/
 
+## React hook form
+
+suitable for bigger applications with multiple forms.
+
 ## AWS Amplify
 
 option 1 -

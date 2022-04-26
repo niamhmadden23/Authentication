@@ -1,20 +1,27 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
-import CustomInput from '../../components/CustomInput/CustomInput';
+import {View, Text, StyleSheet, ScrollView, Alert} from 'react-native';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../SocialSignInButtons.js/SocialSignInButtons';
 import {useNavigation} from '@react-navigation/native';
+import {Auth} from 'aws-amplify';
+import {useForm} from 'react-hook-form';
+import CustomInput from '../../components/CustomInput/CustomInput';
 
 const SignInScreen = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  // const [username, setUsername] = useState('');
+  // const [password, setPassword] = useState('');
 
   const navigation = useNavigation();
-
-  const onSignInPressed = () => {
+  const {control, handleSubmit} = useForm();
+  const onSignInPressed = async data => {
     // validate user
+    try {
+      const response = await Auth.signIn(data.username, data.password);
+      console.log(response);
+    } catch (e) {
+      Alert.alert('oops', e.message);
+    }
     navigation.navigate('Home');
-    console.warn('sign in');
   };
   const onForgotPasswordPressed = () => {
     navigation.navigate('ForgotPassword');
@@ -30,17 +37,26 @@ const SignInScreen = () => {
       <View style={styles.root}>
         <Text style={styles.text}>Sign in</Text>
         <CustomInput
+          name="username"
           placeholder="Username"
-          value={username}
-          setValue={setUsername}
+          control={control}
+          rules={{required: 'Username is required'}}
         />
         <CustomInput
+          name="password"
           placeholder="Password"
-          value={password}
-          setValue={setPassword}
+          control={control}
           secureTextEntry
+          rules={{
+            required: 'Password is required',
+            minLength: {
+              value: 8,
+              message: 'Password should be a minimum of 8 characters',
+            },
+          }}
         />
-        <CustomButton onPress={onSignInPressed} text="Sign in" />
+
+        <CustomButton onPress={handleSubmit(onSignInPressed)} text="Sign in" />
         <SocialSignInButtons />
         <CustomButton
           onPress={onForgotPasswordPressed}

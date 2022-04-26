@@ -1,1 +1,1 @@
-import {default} from './ConfirmEmailScreen';
+export {default} from './ConfirmEmailScreen';
