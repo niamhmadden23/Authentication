@@ -55,3 +55,5 @@ backgroundColor: 'blue',
 };
 
 -option 2
+
+custom styling used here.
