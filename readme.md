@@ -35,3 +35,19 @@
 ## Navigation
 
 https://reactnavigation.org/docs/stack-navigator/
+
+## AWS Amplify
+
+option 1 -
+
+We can customise the default theme provided by Amplify by importing AmplifyTheme and using it in App.js as follows:
+
+const customThemes = {
+...AmplifyTheme,
+button: {
+...AmplifyTheme.button,
+backgroundColor: 'blue',
+},
+};
+
+-option 2
